@@ -34,8 +34,11 @@ es5-lecture/ ├── passwordLeak/ # ES5 and ES6 example securing the password
    
 
 ⚡Example Scenarios:
-### passwordLeak: Demonstrates how ES5 exposes passwords before hashing while ES6 secures the password before hashing. Contains both an ES5 and ES6 example inside.
+### passwordLeak:
+ Demonstrates how ES5 exposes passwords before hashing while ES6 secures the password before hashing. Contains both an ES5 and ES6 example inside.
 
-### scopingIssue: Shows how ES5's function-scoped variables can cause issues like variable leaks, and contrasts this with ES6's block-scoped variables.
+### scopingIssue: 
+Shows how ES5's function-scoped variables can cause issues like variable leaks, and contrasts this with ES6's block-scoped variables.
 
-### cleanerFunctions: A quick display page which helps demonstrate how both ES5 and ES6 functions do the same thing in terms of running functions, but ES6 is written in a much cleaner, easier and quicker way. 
+### cleanerFunctions: 
+A quick display page which helps demonstrate how both ES5 and ES6 functions do the same thing in terms of running functions, but ES6 is written in a much cleaner, easier and quicker way. 
