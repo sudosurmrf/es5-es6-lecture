@@ -24,7 +24,7 @@ function insecureHashPasswordES5(req, res) {
   
   try{
     //if the password is attempted to be accessed, before it is sent to our hashing function below, the original plain text password is accessible due to the function scoping inside es5. 
-    console.log("Insecure Password (ES5):", password);
+    console.log("Attempting to log password (ES5):", password);
     res.send(`
       <p>${password}</p>
       <a href="/">Go Back</a>`)
@@ -57,7 +57,7 @@ const secureHashPasswordES6 = (req, res) => {
     }
     
   const password = req.body.password;
-  //runs the same hashing function, since es6 allows for function AND block scoping, this will be contained in the block scope. If the above is NOT successful (the catch runs) then the safe correct code will follow:
+  //runs the same hashing function, since es6 allows for function AND block scoping, this will be contained in the block scope. If the above is NOT successful (the catch runs) then the originally intended code will run
   hashPassword(password, (hashedPassword) => {
 
     res.send(`
