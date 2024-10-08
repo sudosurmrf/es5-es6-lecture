@@ -19,7 +19,7 @@ es5-lecture/ ├── passwordLeak/ # ES5 and ES6 example securing the password
 
    run this line of code in your terminal: npm i
 
-   cd into the folder with the example of your choice
+   **cd into the folder with the example of your choice** if you type "pwd" into your terminal, and it ends as "/es5-lecture" you're in the wrong folder.
 
    if the folder contains a server.js file, run this in your terminal: node server.js
 
@@ -42,3 +42,7 @@ Shows how ES5's function-scoped variables can cause issues like variable leaks, 
 
 ### cleanerFunctions: 
 A quick display page which helps demonstrate how both ES5 and ES6 functions do the same thing in terms of running functions, but ES6 is written in a much cleaner, easier and quicker way. 
+
+### thisIsBetter:
+using two instances of an object, we show how the lexical (surrounding) scope of ES6 arrow functions allows for a more user-intended experience when accessing the "this" inside of an object and inside of a function inside of an object. 
+
