@@ -19,6 +19,7 @@ es5-lecture/ ├── passwordLeak/ # ES5 and ES6 example securing the password
    if the folder contains a server.js, also open a browser window and navigate to the following: http://localhost:3000
    
    (IF ON WINDOWS)if the folder only contains an index.html and an index.js, run this in your terminal: start index.html
+   
    (IF ON MAC)if the folder only contains an index.html and an index.js, run this in your terminal: open index.html
    
    
