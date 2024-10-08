@@ -46,7 +46,7 @@ button {
   padding: 15px 30px;
   font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 0 20px rgba(79, 195, 247, 0.6), inset 0 0 10px rgba(79, 195, 247, 0.6);
@@ -96,11 +96,6 @@ button {
   animation: button-glow 2s infinite ease-in-out;
 }
 
-
-.container {
-  text-align: center;
-  margin-top: 50px;
-}
 .code-section, .output-section {
   display: flex;
   justify-content: center;
@@ -108,26 +103,36 @@ button {
 }
 .code-box {
   width: 45%;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #ddd;
   margin: 10px;
-  background-color: #f4f4f4;
+  background-color: #282c34;
+  color: white;
 }
 pre {
   text-align: left;
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
 }
 .result {
-  margin-top: 20px;
-  font-size: 20px;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #121312;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  color: #340a57;
+  font-family: monospace;
+  font-size: 1rem;
+  width: 80%;
 }
 .advantage {
   margin-top: 20px;
   font-size: 18px;
-  color: green;
+  color: rgb(195, 233, 233);
 }
 .console-output {
   font-family: monospace;
@@ -136,4 +141,27 @@ pre {
   padding: 10px;
   border-radius: 5px;
   margin-top: 10px;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  justify-content: center;
+  margin: 0 auto;
+  background: linear-gradient(270deg, #ff7f50, #1e90ff, #32cd32, #ff1493);
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

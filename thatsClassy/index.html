@@ -7,64 +7,95 @@
   <link rel="stylesheet" href="../index.css" />
   <title>ES5 vs ES6 Interactive Demo</title>
 </head>
+<style>
+  label {
+    color: white;
+  }
+   .outerContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      background: linear-gradient(45deg, #ff8a04e1, #073cce8e,#ff149171);
+      background-size: 100% 150%;
+      animation: rainbow 10s ease infinite;
+      height: 100vh;
+      width: 100vw; 
+   }
+   
+    .container {
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.15); 
+      backdrop-filter: blur(15px); 
+      -webkit-backdrop-filter: blur(15px); 
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3); 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); 
+      z-index: 1;
+      color: black; 
+    }
+</style>
 <body>
-  <div class="container">
-    <h1>ES5 vs ES6: Constructor Functions vs Classes</h1>
+  <div class="outerContainer">
 
-    <div>
-      <label for="name-input">Enter Name:</label>
-      <input type="text" id="name-input" placeholder="Name">
-    </div>
-    <div>
-      <label for="age-input">Enter Age:</label>
-      <input type="number" id="age-input" placeholder="Age">
-    </div>
-
-    <div>
-      <button id="es5-button">Create with ES5 Constructor Function</button>
-      <button id="es6-button">Create with ES6 Class</button>
-    </div>
-
-    <div class="output-section">
-      <div class="code-box">
-        <h3>ES5 Constructor Function</h3>
-        <pre>
-function Person1(name, age) {
-  this.name = name;
-  this.age = age;
-}
-
-Person1.prototype.greet = function() {
-  return 'Hello ' + this.name;
-};
-        </pre>
+    <div class="container">
+      <h1>ES5 vs ES6: Constructor Functions vs Classes</h1>
+      
+      <div>
+        <label for="name-input">Enter Name:</label>
+        <input type="text" id="name-input" placeholder="Name">
       </div>
-      <div class="code-box">
-        <h3>ES6 Class</h3>
-        <pre>
-class Person {
-  constructor(name, age) {
-      this.name = name;
-      this.age = age;
-  }
-
-  greet() {
-      return `Hello ${this.name}`;
-  }
-}
-        </pre>
+      <div>
+        <label for="age-input">Enter Age:</label>
+        <input type="number" id="age-input" placeholder="Age">
       </div>
-    </div>
-
-    <div class="result">
-      <p id="result-text">Click a button to create a new person and see the greeting!</p>
-    </div>
-
-    <div id="advantage-text" class="advantage"></div>
-
-    <div class="console-output" id="console-output">
-      <p id="console-text">Console Output:</p>
+      
+      <div>
+        <button id="es5-button">Create with ES5 Constructor Function</button>
+        <button id="es6-button">Create with ES6 Class</button>
+      </div>
+      
+      <div class="output-section">
+        <div class="code-box">
+          <h3>ES5 Constructor Function</h3>
+          <pre>
+            function Person1(name, age) {
+              this.name = name;
+              this.age = age;
+            }
+            
+            Person1.prototype.greet = function() {
+              return 'Hello ' + this.name;
+            };
+          </pre>
+        </div>
+        <div class="code-box">
+          <h3>ES6 Class</h3>
+          <pre>
+            class Person {
+              constructor(name, age) {
+                this.name = name;
+                this.age = age;
+              }
+              
+              greet() {
+                return `Hello ${this.name}`;
+              }
+            }
+          </pre>
+        </div>
+      </div>
+      
+      <div class="result">
+        <p id="result-text">Click a button to create a new person and see the greeting!</p>
+      </div>
+      
+      <div id="advantage-text" class="advantage"></div>
+      
+      <div class="console-output" id="console-output">
+        <p id="console-text">Console Output:</p>
+      </div>
     </div>
   </div>
-</body>
-</html>
+  </body>
+  </html>

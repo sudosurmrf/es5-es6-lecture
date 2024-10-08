@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css" />
+  <script defer src="./index.js"></script>
+  <title>Syntactic Sugar Rush!</title>
+  <style>
+    #result-text {
+      width: auto;
+    }
+    .result {
+      width: auto;
+
+    }
+    .outerContainer {
+      display: flex;
+      flex-direction: row;
+      width:80%;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+    }
+    pre {
+      display: flex;
+      justify-content: center; 
+      white-space: pre;
+      width:90%;
+    }
+    .code-box {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      width:45%;
+    }
+  </style>
+</head>
+<body>
+  <h1>ES5 Callback Hell vs ES6 Async/Await</h1>
+  <p>This demo shows how ES5's callback hell has been cleaned up in ES6 with the addition of async/await syntax.</p>
+  <div class="outerContainer">
+
+    <div class="container">
+      
+      <div class="code-box">
+        <h2>ES5 Callback Hell</h2>
+        <pre><code>
+          function fetchData(callback) {
+            setTimeout(function() {
+              callback('Fetched data (Callback Hell)');
+            }, 1000);
+          }
+          
+          function processData(callback) {
+            setTimeout(function() {
+              callback('Processed data');
+            }, 1000);
+          }
+          
+          function saveData(callback) {
+            setTimeout(function() {
+              callback('Saved data');
+            }, 1000);
+          }
+          
+          function runCallbackHell() {
+            clearLogAndResult();
+            updateLog('Starting ES5 callback hell...');
+          
+            fetchData(function(result1) {
+              updateLog(result1);
+          
+              processData(function(result2) {
+                updateLog(result2);
+          
+                saveData(function(result3) {
+                  updateLog(result3);
+                  updateLog('All done (Callback Hell)!');
+                });
+              });
+            });
+          
+            // More callbacks that cause the "pyramid of doom" or "callback hell"
+            fetchData(function() {
+              processData(function() {
+                saveData(function() {
+                  fetchData(function() {
+                    processData(function() {
+                      saveData(function() {
+                        updateLog('More Callback Hell...');
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          }
+        </code></pre>
+        <button id="callback-hell-button">Run Callback Hell</button>
+      </div>
+      
+      <div class="code-box">
+        <h2>ES6 Async/Await</h2>
+        <pre><code>
+          const fetchData = async () => {
+            return new Promise(resolve => {
+              setTimeout(() => {
+                resolve('Fetched data');
+              }, 1000);
+            });
+          }
+      
+          const processData = async () => {
+            return new Promise(resolve => {
+              setTimeout(() => {
+                resolve('Processed data');
+              }, 1000);
+            });
+          }
+      
+          const saveData = async () => {
+            return new Promise(resolve => {
+              setTimeout(() => {
+                resolve('Saved data');
+              }, 1000);
+            });
+          }
+      
+          const runAsyncAwait = async () => {
+            const result1 = await fetchData();
+            console.log(result1);
+      
+            const result2 = await processData();
+            console.log(result2);
+      
+            const result3 = await saveData();
+            console.log(result3);
+      
+            console.log('All done with Async/Await!');
+          }
+        </code></pre>
+        <button id="async-await-button">Run Async/Await</button>
+      </div>
+      
+    </div>
+    <div class="result">
+      <h3>Result Console</h3>
+      <pre id="result-text">Click the buttons to see the result here!</pre>
+    </div>
+  </div>
+</body>
+</html>
