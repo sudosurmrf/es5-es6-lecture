@@ -9,6 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static HTML files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res, next) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 // ---------- Common Hashing Function ----------
 function hashPassword(password, callback) {
