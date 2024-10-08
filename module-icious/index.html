@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES5 vs ES6: Modules</title>
+  <script defer src="./index.js"></script>
+  <link rel="stylesheet" href="../index.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1e1e2e;
+    }
+    html {
+      width: 100%;
+      height: 100%;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(45deg, #ff8a04e1, #073cce8e,#ff149171);
+      justify-content: center;
+      align-items: center;
+      width: 85%;
+      height: 90%;
+      border-radius: 50px;
+    }
+
+    .code-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    pre {
+      background-color: rgba(255, 251, 251, 0.068);
+      width: 100%;
+    }
+    
+    .code-box {
+      background-color: #282c349a;
+      color: white;
+      padding: 20px;
+      margin: 20px 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      overflow-x: hidden;
+      flex-basis: 48%; 
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      display: flex;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #121312a2;
+      color: #fff;
+      border-radius: 10px;
+      max-height: 30%;
+      max-width: 30%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ES5 vs ES6: Import/Export Modules</h1>
+    <p>This demo explains how ES5 and ES6 handle module imports and exports differently.</p>
+
+  
+    <div class="input-container">
+      <label for="input1">Enter first number:</label>
+      <input type="number" id="input1" value="10">
+      <label for="input2">Enter second number:</label>
+      <input type="number" id="input2" value="5">
+      <button id="runButton">Run ES5 and ES6</button>
+    </div>
+
+   
+    <div class="code-container">
+      <div id="es5Code" class="code-box">
+        <h2>ES5 Module Example</h2>
+        <pre><code>
+// file: es5-module.js
+var mathModule = (function() {
+  var privateVar = 42;
+
+  function add(x, y) {
+    return x + y;
+  }
+
+  return {
+    add: add,
+    answer: privateVar
+  };
+})();
+
+// file: es5-main.js
+var result = mathModule.add(10, 5);
+console.log('ES5 Result:', result);  // Output: ES5 Result: 15
+console.log('The answer to everything is:', mathModule.answer);
+        </code></pre>
+      </div>
+
+      
+      <div id="es6Code" class="code-box">
+        <h2>ES6 Module Example</h2>
+        <pre><code>
+// file: main.js
+import { add, answer } from './math.js';
+          
+const result = add(10, 5);
+console.log('ES6 Result:', result);  // Output: ES6 Result: 15
+console.log('The answer to everything is:', answer);
+
+// file: math.js
+export const answer = 42;
+
+const add = (x, y) => {
+  return x + y;
+}
+        </code></pre>
+      </div>
+    </div>
+    <div class="result" id="resultText">
+      <h3>Result Console</h3>
+      <p>See the results of both ES5 and ES6 modules here!</p>
+    </div>
+  </div>
+</body>
