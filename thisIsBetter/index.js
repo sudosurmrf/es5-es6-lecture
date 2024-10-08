@@ -3,7 +3,7 @@ const person1 = {
   name: 'Ari',
   favColor: 'purple',
   greet: function() {
-    setTimeout(function() {
+    setTimeout(function() {//using an ES5 function
       console.log(this.name); // 'this' refers to the global object, not person
     }, 500);
   }
@@ -16,7 +16,7 @@ const person2 = {
   name: 'Jane',
   favColor: 'green',
   greet: function() {
-    setTimeout(() => {
+    setTimeout(() => {//using an ES6 arrow function
       console.log(this.name); // 'this' refers to the person2 object
     }, 500);
   }

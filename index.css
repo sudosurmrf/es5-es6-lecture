@@ -95,3 +95,45 @@ button:active {
 button {
   animation: button-glow 2s infinite ease-in-out;
 }
+
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+.code-section, .output-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.code-box {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  background-color: #f4f4f4;
+}
+pre {
+  text-align: left;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+}
+.advantage {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
+.console-output {
+  font-family: monospace;
+  background: black;
+  color: #00FF00;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
