@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bcrypt Password Hash Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bcrypt Password Hashing Demo</h1>
+  
+  <h2>ES5 Example (Insecure)</h2>
+  <p>This example exposes the password before hashing.</p>
+  <form action="/hash-password-es5" method="POST">
+    <label for="password-es5">Enter Password:</label>
+    <input type="text" name="password" id="password-es5" required>
+    <button type="submit">Hash Password (ES5)</button>
+  </form>
+
+  <h2>ES6 Example (Secure)</h2>
+  <p>This example hashes the password without exposing it and throws an error if attempted to be accessed early.</p>
+  <form action="/hash-password-es6" method="POST">
+    <label for="password-es6">Enter Password:</label>
+    <input type="text" name="password" id="password-es6" required>
+    <button type="submit">Hash Password (ES6)</button>
+  </form>
+</body>
+</html>
