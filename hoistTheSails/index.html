@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="./hoist.css" />
+    <title>Hoist the Sails</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        .success {
+          color: green;
+        }
+        .error {
+          color: red;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hoist the Sails: Function Hoisting - ES5 vs ES6</h1>
+    <p>Arrr! Let's set sail and see how hoisting works in ES5 and ES6!</p>
+    
+    <button onclick="runExample()">Hoist the Functions!</button>
+    
+    <h2>Pirate's Log:</h2>
+    <div id="consoleLog"></div>
+
+    <h2>Function Code Snippets:</h2>
+    <h3>ES5 Function Declaration (Hoisted)</h3>
+    <pre><code>
+logToScreen("Trying to call the ES5 function before its declaration:");
+  try {
+    es5Function();
+  } catch (error) {
+    logToScreen("Error: " + error.message, true);
+}  
+
+function es5Function() {
+    console.log("Ahoy! This ES5 function be hoisted to the top, ready for action!");
+}
+
+    </code></pre>
+
+    <h3>ES6 Function Expression (not Hoisted)</h3>
+    <pre><code>
+logToScreen("Calling the ES6 function expression before its declaration:");
+  try {
+    es6Function(); 
+  } catch (error) {
+    logToScreen("Arrr! Error: " + error.message, true);
+} 
+
+let es6Function = function() {
+    console.log("Arrr! This ES6 function be stuck, no hoisting here.");
+};
+    </code></pre>
+
+    <h3>ES6 Arrow Function (Not Hoisted)</h3>
+    <pre><code>
+logToScreen("Calling the ES6 arrow function before its declaration:");
+  try {
+    es6ArrowFunction();
+  } catch (error) {
+    logToScreen("Shiver me timbers! Error: " + error.message, true);
+}
+
+const es6ArrowFunction = () => {
+    console.log("This ES6 arrow function stays anchored, no hoisting in sight!");
+};
+    </code></pre>
+
+   
+</body>
+</html>

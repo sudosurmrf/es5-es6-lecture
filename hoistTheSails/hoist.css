@@ -1,0 +1,167 @@
+body {
+  background-image: url('./assets/treasure.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Pirata One', serif;
+  color: #3e2723;
+  opacity: 100%;
+  padding: 40px;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+h1, h2 {
+  font-family: 'Pirata One', serif;
+  color: #be730f;
+  text-shadow: 3px 3px 0px #fff8d1;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #d48610ab;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: 2.2rem;
+  padding-bottom: 5px;
+}
+
+p {
+  color: white;
+  font-size: 1.2rem;
+}
+
+
+button {
+  background-color: #8b4513;
+  color: #fff;
+  font-family: 'Pirata One', serif;
+  border: 2px solid #4b2e1b;
+  padding: 12px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px #3e2723;
+  margin: 20px auto;
+  display: block;
+  border-radius: 5px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.9);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+#consoleLog {
+    border: 3px solid #138b7b;
+  padding: 20px;
+  max-height: 60%;
+  width: 70%;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+  margin-bottom: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #1a1a1a; 
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.75); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); 
+  background-image: url('./assets/parchment2.png');
+  background-size: 100% 170%; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  border: 5px solid #8b4513;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(3px); 
+}
+
+
+
+#consoleLog::-webkit-scrollbar {
+  width: 10px;
+}
+
+#consoleLog::-webkit-scrollbar-track {
+  background: #d4a373;
+}
+
+#consoleLog::-webkit-scrollbar-thumb {
+  background: #8b4513;
+}
+
+#consoleLog::-webkit-scrollbar-thumb:hover {
+  background: #b22222;
+}
+
+
+pre {
+  background-color: rgba(250, 240, 210, 0.98);
+  border: 3px solid #8b4513;
+  padding: 20px;
+  border-radius: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #1a1a1a; 
+  font-size: 1.4rem; 
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.75);
+  margin-bottom: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); 
+}
+
+code {
+  font-size: 1.4rem; 
+  font-weight: bold; 
+  color: #000000; 
+  background-color: rgba(255, 255, 255, 0.85); 
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+h3 {
+  font-family: 'Pirata One', serif;
+  color: #df6a0ad5;
+  margin-top: 20px;
+  text-shadow: 1px 1px #fff8d1;
+  font-size: 1.8rem;
+}
+
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/ship1.jpg');
+  background-size: 80%;
+  opacity: 20%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+#consoleLog div {
+  margin-bottom: 10px;
+}
