@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log(funcs[0]()); // 3
     console.log(funcs[1]()); // 3
     console.log(funcs[2]()); // 3
-  }
+  };
   
   
   
